@@ -4,13 +4,13 @@
  *
  */
 
-#include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
 #include <iostream>
+#include "SFML/Audio.hpp"
+#include "SFML/Graphics.hpp"
 
 bool running = false;
 
-int main() {
+int WinMain() {
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "SFML works!");
 
     sf::Texture backTexture;
@@ -97,10 +97,7 @@ int main() {
         window.display();
     }
 
-    running = true;
-    while (running) {
-        std::cout << "Running" << std::endl;
-    }
+	music.stop();
 
     return 0;
 }

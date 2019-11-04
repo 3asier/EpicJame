@@ -7,10 +7,13 @@
 #include <iostream>
 #include "SFML/Audio.hpp"
 #include "SFML/Graphics.hpp"
+#include "App.h"
 
 bool running = false;
 
 int WinMain() {
+	App().Start();
+
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "SFML works!");
 
     sf::Texture backTexture;

@@ -1,4 +1,5 @@
 #include "Window.h"
+#include "EngineException.h"
 
 Window::Window(const char* name)
 	:
@@ -49,8 +50,15 @@ void Window::SetName(const char* name)
 */
 void Window::SetIcon(const char* filepath)
 {
-	icon.loadFromFile(filepath);
-	wnd.setIcon(1024, 1024, icon.getPixelsPtr());
+	try
+	{
+		if (!icon.loadFromFile(filepath))
+		{
+			throw EN_EXCEPTION("Error loading icon.");
+		}
+		wnd.setIcon(1024, 1024, icon.getPixelsPtr());
+	}
+	catch (EngineException e) {}
 }
 
 /*

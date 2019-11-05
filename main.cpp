@@ -13,6 +13,7 @@ bool running = false;
 
 int WinMain() {
 	App().Start();
+	return 0;
 
     sf::RenderWindow window(sf::VideoMode(1000, 1000), "SFML works!");
 

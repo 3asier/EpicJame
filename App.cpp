@@ -2,8 +2,10 @@
 #include <iostream>
 
 App::App()
+	:
+	wnd(WNDNAME)
 {
-	std::cout << "App was created" << std::endl;
+	
 }
 
 App::~App()
@@ -13,5 +15,9 @@ App::~App()
 
 void App::Start()
 {
-	std::cout << "App was started!" << std::endl;
+	while (wnd.GetWindow()->isOpen()) {
+		wnd.ProcessEvents();
+		wnd.ClearWindow();
+		wnd.Display();
+	}
 }

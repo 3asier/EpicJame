@@ -5,13 +5,20 @@
 class Window
 {
 public:
-	Window(int width, int height, const char* name);
+	Window(const char* name);
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
 	~Window();
 	
+	sf::RenderWindow* GetWindow();
+	void ProcessEvents();
 	void SetName(const char* name);
+	void SetIcon(const char* filepath = "res/icon.png");
+	void ClearWindow();
+	void Display();
 private:
 	sf::RenderWindow wnd;
 	sf::Image icon;
+	int width;
+	int height;
 };

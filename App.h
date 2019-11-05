@@ -1,4 +1,9 @@
 #pragma once
+#include "Window.h"
+
+#define VERSION "0.01a"
+#define TITLE "Ton3l Engine"
+#define WNDNAME TITLE VERSION
 
 class App
 {
@@ -9,6 +14,7 @@ public:
 	~App();
 	void Start();
 private:
+	Window wnd;
 	// Audio Controler
 	// Game Logic
 	// Physics Engine
